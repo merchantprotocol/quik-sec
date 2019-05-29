@@ -1,11 +1,9 @@
 quik-sec (Quick Security) 
 --
-Command Line Module For Magento 2
+Command Line Module For Magento 2 Security
 
 
-## Commands
-
-
+## Monitoring files
 
 **Find all files changed within the last 15 days**
 ```
@@ -13,6 +11,7 @@ find ./ -type f -mtime -15
 ```
 
 **Use Git to check for changed files**
+This is not sufficient enough. It will not track the temporary directories like `pub/media` which is also an uploads directory set to 777. We will need to build something for our own protection.
 ```
 git status
 ```
@@ -44,4 +43,30 @@ find . -type f -name '\.htaccess' | xargs grep -i http;
 find /home/*/public_html/ -type f -mtime -7 -maxdepth 4 -exec egrep -q “eval\(|exec\(|gzinflate\(|base64_decode\(|str_rot13\(|gzuncompress\(|rawurldecode\(|strrev\(|ini_set\(chr|chr\(rand\(|shell_exec\(|fopen\(|curl_exec\(|popen\(|x..x..” {} \; -print > /tmp/suspected-malware.txt
 ```
 
+## Directory
 
+- Check for symlinks
+- Check for public directories
+- Check for publicly accessible zip files
+- Check for Installed programs
+
+## Modsec
+
+- Set the default magento modsec files
+- Check modsec rules
+- Check status
+- whitelist IPs
+- blacklist IPs
+- enable/disable rules
+- enable/disable urls
+
+## selinux
+
+- Check status
+- Check file settings
+- Set file settings
+
+## Logs
+
+- 90 days of logs stored on the server
+- 365 days of logs archived on S3
