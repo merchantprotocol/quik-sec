@@ -1,0 +1,28 @@
+{
+	"name" : "merchantprotocol/quik-sec",
+	"description" : "Merchant Protocol's Quik Security is a rudimentary library designed for Security Forensics and Analysis of a webserver.",
+	"homepage": "https://merchantprotocol.com/",
+    "support": {
+        "issues": "https://github.com/merchantprotocol/quik-sec/issues",
+        "source": "https://github.com/merchantprotocol/quik-sec/",
+        "docs": ""
+    },
+	"type" : "library",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Jack",
+			"email" : "jonathon@merchantprotocol.com"
+		}
+	],
+	"version" : "0.0.1",
+	"minimum-stability" : "stable",
+	"require": {},
+	"autoload" : {
+        "psr-0": {
+            "Quik-Sec": "src/"
+        }
+	},
+    "bin": [
+        "bin/quik-sec"
+    ]
+}
